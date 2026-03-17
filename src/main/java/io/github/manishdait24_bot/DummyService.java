@@ -1,4 +1,4 @@
-package org.example;
+package io.github.manishdait24_bot;
 
 
 public class DummyService {

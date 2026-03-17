@@ -2,17 +2,39 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example</groupId>
+  <groupId>io.github.manishdait24-bot</groupId>
   <artifactId>maven-release-poc</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>maven-release-poc</name>
-  <url>http://maven.apache.org</url>
+  <description>Dummy maven package to test maven release</description>
+  <url>https://github.com/manishdait/maven-release-poc</url>
+
+  <licenses>
+    <license>
+      <name>MIT</name>
+      <url>https://github.com/manishdait/maven-release-poc/blob/main/LICENSE.md</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>manishdait</id>
+      <name>Manish Dait</name>
+    </developer>
+  </developers>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <scm>
+    <connection>scm:git:git://github.com/manishdait/maven-release-poc.git</connection>
+    <developerConnection>scm:git:ssh://github.com:manishdait/maven-release-poc.git</developerConnection>
+    <url>https://github.com/manishdait/maven-release-poc</url>
+    <tag>HEAD</tag>
+  </scm>
 
   <dependencies>
     <dependency>
@@ -22,4 +44,67 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <profiles>
+    <profile>
+      <id>publication</id>
+      
+      <properties>
+        <jreleaser.config.file>jreleaser.toml</jreleaser.config.file>
+      </properties>
+      
+      <build>
+        <defaultGoal>deploy</defaultGoal>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+                <configuration>
+                  <attach>true</attach>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+                <configuration>
+                  <attach>true</attach>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <configuration>
+              <altDeploymentRepository>local::file:./target/staging-deploy</altDeploymentRepository>
+              <altReleaseDeploymentRepository>local::file:./target/staging-deploy</altReleaseDeploymentRepository>
+              <altSnapshotDeploymentRepository>local::file:./target/staging-deploy</altSnapshotDeploymentRepository>
+            </configuration>
+          </plugin>
+          
+          <plugin>
+            <groupId>org.jreleaser</groupId>
+            <artifactId>jreleaser-maven-plugin</artifactId>
+            <inherited>false</inherited>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
