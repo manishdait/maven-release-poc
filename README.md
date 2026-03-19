@@ -28,6 +28,12 @@ gpg --gen-key
 gpg --armor --export <KEY ID> 
 gpg --armor --export-secret-keys <KEY ID>
 ```
+
+- Distributing Your public key
+```
+gpg --keyserver keyserver.ubuntu.com --send-keys <KEY ID>
+```
+
 - Add these keys as GitHub repository secrets:
 
 | Secret | Name	Value |
