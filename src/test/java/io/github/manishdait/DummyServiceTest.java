@@ -1,4 +1,4 @@
-package io.github.manishdait24_bot;
+package io.github.manishdait;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
