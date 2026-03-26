@@ -60,3 +60,4 @@ gpg --keyserver keyserver.ubuntu.com --send-keys <KEY ID>
 
 ## References
 - [Sonatype Guide](https://central.sonatype.org/publish/publish-portal-maven/)
+- [Demo Release](https://central.sonatype.com/artifact/io.github.manishdait/maven-release-poc)
