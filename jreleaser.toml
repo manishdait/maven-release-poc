@@ -8,6 +8,12 @@ url = "https://central.sonatype.com/api/v1/publisher"
 stagingRepositories = ["target/staging-deploy"]
 applyMavenCentralRules = true
 
+retryDelay = 20
+maxRetries = 102
+
 [release.github]
 owner = "manishdait"
 name = "maven-release-poc"
+
+[jreleaser.release.github.changelog]
+enabled = false
