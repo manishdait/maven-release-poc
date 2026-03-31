@@ -44,14 +44,14 @@ jobs:
           echo "use-agent" >> ~/.gnupg/gpg.conf
 
       - name: Set Maven version
-        run: mvn -B versions:set versions:commit -DnewVersion=${GITHUB_REF_NAME#v}
+        run: ./mvnw -B versions:set versions:commit -DnewVersion=${GITHUB_REF_NAME#v}
 
       - name: Build & Stage (publication profile)
-        run: mvn -B -Ppublication deploy
+        run: ./mvnw -B -Ppublication deploy
 
       # Publish using JReleaser
       - name: Publish with JReleaser
-        run: mvn -B -Ppublication jreleaser:full-release
+        run: ./mvnw -B -Ppublication jreleaser:full-release
         env:
           JRELEASER_GPG_SECRET_KEY: ${{ secrets.GPG_PR_KEY }}
           JRELEASER_GPG_PUBLIC_KEY: ${{ secrets.GPG_PUB_KEY }}

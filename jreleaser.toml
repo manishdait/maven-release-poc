@@ -1,3 +1,5 @@
+# https://jreleaser.org/guide/latest/reference
+
 [signing.pgp]
 active = "ALWAYS"
 armored = true
@@ -14,6 +16,11 @@ maxRetries = 102
 [release.github]
 owner = "manishdait"
 name = "maven-release-poc"
+skipTag = true
+skipRelease = true
+
+[release.github.update]
+enabled = true
 
 [release.github.changelog]
 enabled = false
