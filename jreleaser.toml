@@ -1,4 +1,4 @@
-[signing]
+[signing.pgp]
 active = "ALWAYS"
 armored = true
 
@@ -15,5 +15,5 @@ maxRetries = 102
 owner = "manishdait"
 name = "maven-release-poc"
 
-[jreleaser.release.github.changelog]
+[release.github.changelog]
 enabled = false
