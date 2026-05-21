@@ -46,20 +46,6 @@ jobs:
           mkdir -p ~/.gnupg
           echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
           echo "use-agent" >> ~/.gnupg/gpg.conf
-      
-      - name: Commit and Push updated pom.xml
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Check if pom.xml actually changed to prevent empty commit errors
-          if git diff --exit-code pom.xml; then
-            echo "No changes to pom.xml"
-          else
-            git add pom.xml
-            git commit -m "chore: bump version to ${GITHUB_REF_NAME#v} [skip ci]"
-            git push
-          fi
 
       - name: Set Maven version
         run: ./mvnw -B versions:set versions:commit -DnewVersion=${GITHUB_REF_NAME#v}
@@ -70,7 +56,7 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
           git add .
-          git commit -m "chore: bump version to ${GITHUB_REF_NAME#v} [skip ci]"
+          git commit -s -S -m "chore: bump version to ${GITHUB_REF_NAME#v} [skip ci]"
           
           git push origin HEAD:master
 
