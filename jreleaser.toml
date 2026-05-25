@@ -10,6 +10,8 @@ url = "https://central.sonatype.com/api/v1/publisher"
 stagingRepositories = ["target/staging-deploy"]
 applyMavenCentralRules = true
 
+transitionState = "PUBLISHING"
+
 retryDelay = 20
 maxRetries = 102
 
@@ -17,11 +19,10 @@ maxRetries = 102
 owner = "manishdait"
 name = "maven-release-poc"
 skipTag = true
-skipRelease = true
+skipRelease = false
 
 [release.github.update]
 enabled = true
 
 [release.github.changelog]
 enabled = true
-formatted = "ALWAYS"
