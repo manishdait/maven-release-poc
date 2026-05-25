@@ -19,9 +19,10 @@ owner = "manishdait"
 name = "maven-release-poc"
 skipTag = true
 skipRelease = false
+releaseNotes.enabled = true
 
 [release.github.update]
-enabled = true
+enabled = false
 
 [release.github.changelog]
-enabled = true
+enabled = false
