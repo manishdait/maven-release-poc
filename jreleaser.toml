@@ -17,6 +17,12 @@ maxRetries = 102
 [release.github]
 owner = "manishdait"
 name = "maven-release-poc"
+skipTag = true
+skipRelease = false
+
+[release.github.update]
+enabled = true
 
 [release.github.changelog]
-enabled = false
+enabled = true
+
