@@ -21,7 +21,7 @@ skipTag = true
 skipRelease = false
 
 [release.github.update]
-enabled = true
+enabled = false
 
 [release.github.changelog]
 enabled = true
