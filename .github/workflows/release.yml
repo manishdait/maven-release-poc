@@ -41,7 +41,7 @@ jobs:
 
       - name: Import GPG key
         run: |
-          echo "${{ secrets.GPG_KEY_CONTENTS }}" | gpg --batch --import
+          echo "${{ secrets.GPG_PR_KEY }}" | gpg --batch --import
           mkdir -p ~/.gnupg
           echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
           echo "use-agent" >> ~/.gnupg/gpg.conf
