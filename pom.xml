@@ -4,7 +4,7 @@
 
   <groupId>io.github.manishdait</groupId>
   <artifactId>maven-release-poc</artifactId>
-  <version>0.1.22</version>
+  <version>0.1.23</version>
   <packaging>pom</packaging>
 
   <name>maven-release-poc</name>
@@ -26,6 +26,11 @@
   </developers>
   <modules>
     <module>app</module>
+    <module>app2</module>
+    <module>app3</module>
+    <module>app4</module>
+    <module>app5</module>
+    <module>app6</module>
   </modules>
 
   <properties>
