@@ -4,7 +4,7 @@
 
   <groupId>io.github.manishdait</groupId>
   <artifactId>maven-release-poc</artifactId>
-  <version>0.1.18</version>
+  <version>0.1.17</version>
   <packaging>pom</packaging>
 
   <name>maven-release-poc</name>
