@@ -4,7 +4,7 @@
 
   <groupId>io.github.manishdait</groupId>
   <artifactId>maven-release-poc</artifactId>
-  <version>0.1.18</version>
+  <version>0.1.19</version>
   <packaging>pom</packaging>
 
   <name>maven-release-poc</name>
@@ -117,6 +117,7 @@
           <plugin>
             <groupId>org.jreleaser</groupId>
             <artifactId>jreleaser-maven-plugin</artifactId>
+            <version>1.23.0</version>
             <inherited>false</inherited>
           </plugin>
         </plugins>
