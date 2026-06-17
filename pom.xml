@@ -4,7 +4,7 @@
 
   <groupId>io.github.manishdait</groupId>
   <artifactId>maven-release-poc</artifactId>
-  <version>0.1.16</version>
+  <version>0.1.17</version>
   <packaging>jar</packaging>
 
   <name>maven-release-poc</name>
@@ -96,6 +96,19 @@
               <altReleaseDeploymentRepository>local::file:./target/staging-deploy</altReleaseDeploymentRepository>
               <altSnapshotDeploymentRepository>local::file:./target/staging-deploy</altSnapshotDeploymentRepository>
             </configuration>
+          </plugin>
+
+          <plugin>
+            <groupId>org.cyclonedx</groupId>
+            <artifactId>cyclonedx-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>makeBom</goal>
+                </goals>
+              </execution>
+            </executions>
           </plugin>
           
           <plugin>
