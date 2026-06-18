@@ -29,7 +29,7 @@ sections = ["ASSETS", "BODY"]
 enabled = true
 formatted = "ALWAYS"
 content = """
-    # Whats New
+    # What's New
 
     {{changelogChanges}}
     {{changelogContributors}}"""
