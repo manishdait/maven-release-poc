@@ -74,7 +74,7 @@ jobs:
         run: ./mvnw -B -Ppublication deploy
 
       - name: Publish with JReleaser
-        run: ./mvnw -B -Ppublication jreleaser:full-release -N
+        run: ./mvnw -B -Ppublication jreleaser:full-release -N -D"jreleaser.dry.run=true"
         env:
           JRELEASER_GPG_PASSPHRASE: ${{ secrets.GPG_PARSE }}
           JRELEASER_MAVENCENTRAL_USERNAME: ${{ secrets.MAVEN_TOKEN_USERNAME }}
@@ -102,3 +102,10 @@ jobs:
       #     echo "Artifacts built and staged locally"
       #     echo "Publishing to Maven Central skipped"
       #     echo "----------------------------------------"
+
+      # Temp to see the release format
+      - name: Print Generated Release Notes
+        run: |
+          echo "=== PREVIEW OF YOUR DESIGNED RELEASE NOTES ==="
+          cat target/jreleaser/release/CHANGELOG.md
+          echo "=============================================="

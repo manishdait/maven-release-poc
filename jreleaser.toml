@@ -28,4 +28,11 @@ sections = ["ASSETS", "BODY"]
 [release.github.changelog]
 enabled = true
 formatted = "ALWAYS"
+content = """
+    # Whats New
+
+    {{changelogChanges}}
+    {{changelogContributors}}"""
+format = "- {{commitTitle}} by {{contributorUsernameAsLink}} in {{commitAsChanges}}"
+contributors.enabled = true
 

@@ -4,7 +4,7 @@
   <parent>
     <groupId>io.github.manishdait</groupId>
     <artifactId>maven-release-poc</artifactId>
-    <version>0.1.23</version>
+    <version>0.1.24</version>
   </parent>
 
   <artifactId>app2</artifactId>
