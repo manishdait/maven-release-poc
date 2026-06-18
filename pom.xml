@@ -26,11 +26,6 @@
   </developers>
   <modules>
     <module>app</module>
-    <module>app2</module>
-    <module>app3</module>
-    <module>app4</module>
-    <module>app5</module>
-    <module>app6</module>
   </modules>
 
   <properties>
