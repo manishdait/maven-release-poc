@@ -74,7 +74,7 @@ jobs:
         run: ./mvnw -B -Ppublication deploy
 
       - name: Publish with JReleaser
-        run: ./mvnw -B -Ppublication jreleaser:full-release -N -D"jreleaser.dry.run=true"
+        run: ./mvnw -B -Ppublication jreleaser:full-release -N
         env:
           JRELEASER_GPG_PASSPHRASE: ${{ secrets.GPG_PARSE }}
           JRELEASER_MAVENCENTRAL_USERNAME: ${{ secrets.MAVEN_TOKEN_USERNAME }}

@@ -4,7 +4,7 @@
 
   <groupId>io.github.manishdait</groupId>
   <artifactId>maven-release-poc</artifactId>
-  <version>0.1.25</version>
+  <version>0.2.0</version>
   <packaging>pom</packaging>
 
   <name>maven-release-poc</name>
@@ -119,12 +119,6 @@
             <artifactId>jreleaser-maven-plugin</artifactId>
             <version>1.24.0</version>
             <inherited>false</inherited>
-          </plugin>
-
-          <plugin>
-            <groupId>org.cyclonedx</groupId>
-            <artifactId>cyclonedx-maven-plugin</artifactId>
-            <version>2.9.2</version>
           </plugin>
         </plugins>
       </build>
