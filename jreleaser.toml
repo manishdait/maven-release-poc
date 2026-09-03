@@ -35,6 +35,6 @@ content = """
 
     {{changelogChanges}}
     {{changelogContributors}}"""
-format = "- {{commitTitle}} by @{{commitAuthor}} in {{commitShortHash}}"
+format: '- {{commitShortHash}} {{commitTitle}}'
 contributors.enabled = true
 
